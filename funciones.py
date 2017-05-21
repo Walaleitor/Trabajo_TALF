@@ -1,3 +1,5 @@
+import turtle
+
 def validar(lista):
     contador = 0
     if len(lista) > 10:
@@ -25,6 +27,7 @@ def validar(lista):
 
 def  regla_exactamente1(lista):
     dibujador = []
+
     size = len(lista)
     print (lista)
     for i in range(50):
@@ -53,6 +56,8 @@ def  regla_exactamente1(lista):
         print(dibujador)
         lista = dibujador
         dibujador = []
+
+
 
 def regla_110(lista):
     dibujador = []
@@ -110,3 +115,24 @@ def regla_110(lista):
         print(dibujador)
         lista = dibujador
         dibujador = []
+
+
+def dibujar_turtle(Lista):
+    #saca ancho y largo de la lista para instanciar la ventana
+    ancho = len(Lista[0]) * 8
+    largo = len(Lista) * 8
+
+    #instanciando largo y ancho
+    turtle.setup(ancho, largo)
+
+    #creaobjeto ventana para facilitar su uso
+    ventana = turtle.Screen()
+    ventana.bgcolor("lightgreen")
+    ventana.title("Automata Celular - Regla exactamente 1")
+
+    #crea el lapiz
+    lapiz = turtle.Turtle()
+    lapiz.color("blue")
+    lapiz.pensize(8)
+    lapiz.penup()
+    lapiz.goto(-1*(ancho-10), 0)
