@@ -15,7 +15,7 @@ def menu():
 while True:
     menu()
     opcion  = int(input("Ingrese su opcion\n"))
-    os.system("cls")
+    
     if opcion == 0:
         lista = str(input("Ingrese la entrada del Automata \n"))
         lista = validar(lista)
