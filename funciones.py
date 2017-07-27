@@ -124,7 +124,7 @@ def regla_110(lista):
 
 
 def dibujar_turtle(Lista):
-
+    anchodelapiz = 3
     contador_filas = 0
     rango_fila = range(len(Lista[0]))
 
@@ -142,7 +142,7 @@ def dibujar_turtle(Lista):
     #crea el lapiz
     lapiz = turtle.Turtle()
     lapiz.color("blue")
-    lapiz.pensize(4)
+    lapiz.pensize(anchodelapiz)
     lapiz.hideturtle()
     lapiz.speed(0)
 
@@ -153,16 +153,16 @@ def dibujar_turtle(Lista):
 
             if fila[i] == 1:
                 #Si el caracter es 1 , escribe una cantidad x pixeles hacia la derecha
-                lapiz.fd(4)
+                lapiz.fd(anchodelapiz)
                 print(lapiz.pos())
             else:
                 #En el caso que el caracter es 0, el lapiz se sube y se mueve una cantidad x de pixeles para luego se rbajado
                 lapiz.penup()
-                lapiz.fd(4)
+                lapiz.fd(anchodelapiz)
                 lapiz.pendown()
                 print(lapiz.pos())
         #Una vez finalizado el dibujo de una linea, el lapiz vuelve a la posicion inicial pero x pixeles mas abajo
-        contador_filas += -4
+        contador_filas += -anchodelapiz
         lapiz.penup()
         lapiz.goto(0,contador_filas)
         lapiz.pendown()
